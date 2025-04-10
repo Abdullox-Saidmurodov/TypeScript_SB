@@ -1,12 +1,16 @@
-function getName(firstName: string, lastName: string):string {
-    return `Hello ${firstName} ${lastName}}`
-}
-
-const person1 = getName('Samar', 'Badriddinov')
-console.log(person1)
-
 const person = {
-    firstName: 'Samar',
-    lastName: 'Badriddinov',
+    firstName: 'Samar', // required
+    lastName: 'Badriddinov', // required
     city: 'Tashkent',
+    skills: {
+        programming: 'JavaScript',
+        design: 'FIgma',
+    },
 }
+
+function getName(data: {firstName: string; lastName: string }):string {
+    return `Hello ${data.firstName} ${data.lastName}}`
+}
+
+const person1 = getName(person)
+console.log(person1)
